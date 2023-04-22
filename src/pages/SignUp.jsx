@@ -18,6 +18,9 @@ export default function SignUp() {
       [e.target.id]: e.target.value,
    }))
   }
+  function onSumbit(e){
+    e.preventDefault();
+  }
   return (
     <section>
       <h1 className="text-3xl text-center mt-6 font-bold">Sign Up</h1>
@@ -29,7 +32,7 @@ export default function SignUp() {
           className="w-full rounded-2xl" />
         </div>
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20">
-          <form>
+          <form onSubmit={onSubmit}>
           <input
              type="text"
              id="name" 
