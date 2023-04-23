@@ -9,7 +9,7 @@ service cloud.firestore {
     }
     
     // Users
-    match/users/{user} {
+    match /users/{user} {
     allow read;
     allow create;
     allow update: if request.auth.uid == user
@@ -25,7 +25,7 @@ match /b/{bucket}/o {
 match /{allPaths=**} {
 allow read;
 allow write: if
-request.ath != null &&
+request.auth != null &&
 request.resource.size < 2 * 1024 * 1024 && //2MB
 request.resource.contentType.matches('image/.*')
 }
